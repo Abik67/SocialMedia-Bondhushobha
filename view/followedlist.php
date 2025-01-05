@@ -86,15 +86,15 @@
         <div>BondhuShobha</div>
         <input type="text" placeholder="Search for friends">
         <div class="icons">
-            <button>Dark Mode</button>
-            <button>Notification</button>
-            <button>Profile</button>
+            <button title="Dark Mode">🌙</button>
+            <button title="Notification">🔔</button>
+            <button title="Profile">👤</button>
         </div>
     </div>
     <div class="sidebar">
-        <button>User Feed</button>
-        <button>Messages</button>
-        <button>Friends</button>
+            <button><a href="userfeed.php">User Feed</a></button>
+            <button><a href="message.php">Messages</button>
+            <button><a href="friends.php">Friends</a></button>
     </div>
     <div class="content">
         <h2>Followed Lists</h2>

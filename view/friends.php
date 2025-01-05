@@ -91,9 +91,9 @@
     </header>
     <div class="main-content">
         <div class="sidebar">
-            <button>User Feed</button>
-            <button>Messages</button>
-            <button><a href="friends.php">Friends</button>
+        <button><a href="userfeed.php">User Feed</a></button>
+            <button><a href="message.php">Messages</button>
+            <button><a href="friends.php">Friends</a></button>
          
         </div>
         <div class="content">
