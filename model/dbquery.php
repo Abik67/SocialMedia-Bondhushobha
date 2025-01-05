@@ -31,4 +31,20 @@ function get_user_info()
     return $result;
 }
 
+function get_user_info_by_id($id)
+{
+    $conn = dbcon();
+    $sql = "SELECT * FROM user_info WHERE id = $id";
+    $result= $conn->query($sql);
+    return $result;
+}
+
+function search_user($src)
+{
+    $conn = dbcon();
+    $sql = "SELECT * FROM user_info WHERE name LIKE '$src'";
+    $result= $conn->query($sql);
+    return $result;
+}
+
 ?>

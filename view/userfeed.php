@@ -1,3 +1,15 @@
+<?php
+    //require_once '../controller/cmnController.php'; 
+    if(isset($_GET['msg']))
+    {
+        $msg = $_GET['msg'];
+    }
+    else
+    {
+        $msg = "";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,13 +88,28 @@
 
     a:visited {
       color: inherit;
+    
     }
+
+    .card{
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
     </style>
 </head>
 <body>
     <header>
         <div class="logo">BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
+
+        <form action="../controller/cmnController.php" method="post">
+            <input type="text" name="search" placeholder="Search for friends">
+            <button id="srcButton" name="srcSubmit">Search</button>
+        </form>
+
         <div class="icons">
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>
@@ -96,7 +123,14 @@
             <button><a href="friends.php">Friends</a></button>
         </div>
         <div class="content">
-            
+            <div class="">
+                <div class="friend-list">
+                    <?php
+                        if($msg!=""){
+                            echo $msg;
+                        }
+                    ?>
+             </div>
         </div>
     </div>
 </body>

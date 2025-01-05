@@ -1,3 +1,11 @@
+<?php
+    require_once '../model/dbquery.php';
+    $userId=$_GET['result'];
+    $result = get_user_info_by_id($userId);
+    $row=$result->fetch_assoc();
+    $name=$row['name'];
+    $email=$row['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,18 +107,11 @@
         <h2>Username Found</h2>
         <p>Below matched usernames:</p>
         <div class="friend-list">
-            <div class="friend-item">
-                <span>Username</span>
+        <div class="friend-item">
+                <span><?php echo $name ?></span>
                 <button>Add Friend</button>
             </div>
-            <div class="friend-item">
-                <span>Username</span>
-                <button>Add Friend</button>
-            </div>
-            <div class="friend-item">
-                <span>Username</span>
-                <button>Add Friend</button>
-            </div>
+         
         </div>
     </div>
 </body>
