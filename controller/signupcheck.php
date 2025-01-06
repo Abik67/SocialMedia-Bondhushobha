@@ -12,7 +12,10 @@
         $dob = $_POST['dob'];
         $gender= $_POST['gender'];
         echo $gender;
-        
+
+
+    
+          
         if($password === $repassword)
         {
             $result = signup($name,$email,$password,$gender, $dob);
@@ -33,6 +36,7 @@
             header('location: ../view/signup.php');
         }
     }
+
     else
     {
         header('location: ../view/signup.php');

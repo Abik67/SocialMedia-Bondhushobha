@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <span>BondhuShobha</span>
+    <h1>BondhuShobha</h1>
         <input type="text" placeholder="Search for friends">
         <button>Dark Mode</button>
         <button>Notification</button>

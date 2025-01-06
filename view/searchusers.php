@@ -15,20 +15,21 @@
     
 </head>
 <body>
-    <div class="header">
-        <div>BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
-        <div class="icons">
+
+    <h1>BondhuShobha</h1>
+    <form action="../controller/cmnController.php" method="post">
+            <input type="text" name="search" placeholder="Search for friends">
+            <button id="srcButton" name="srcSubmit">Search</button>
+            
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>
             <button title="Profile">👤</button>
-        </div>
-    </div>
-    <div class="sidebar">
+            <br>
+
     <button><a href="userfeed.php">User Feed</a></button>
             <button><a href="message.php">Messages</button>
             <button><a href="friends.php">Friends</a></button>
-    </div>
+
     <div class="content">
         <h2>Username Found</h2>
         <p>Below matched usernames:</p>
@@ -40,5 +41,7 @@
          
         </div>
     </div>
+    <a href="../controller/logout.php">Logout</a>
+
 </body>
 </html>

@@ -7,28 +7,29 @@
     
 </head>
 <body>
-    <header>
-        <div class="logo">BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
-        <div class="icons">
+
+    <h1>BondhuShobha</h1>
+    <form action="../controller/cmnController.php" method="post">
+            <input type="text" name="search" placeholder="Search for friends">
+            <button id="srcButton" name="srcSubmit">Search</button>
+
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>
             <button title="Profile">👤</button>
-        </div>
-    </header>
-    <div class="main-content">
-        <div class="sidebar">
+
+<br>
         <button><a href="userfeed.php">User Feed</a></button>
             <button><a href="message.php">Messages</button>
             <button><a href="friends.php">Friends</a></button>
          
-        </div>
-        <div class="content">
+<br>
             <button><a href="friendlist.php">Friend Lists</button>
             <button><a href="friendrequests.php">Friend Requests</button>
             <button><a href="followedlist.php">Followed Friends</button>
             <button><a href="blocklist.php">Blocked Users</button>
-        </div>
-    </div>
+            <button><a href="reportusers.php">Reported Users</button>
+<br>
+    <a href="../controller/logout.php">Logout</a>
+
 </body>
 </html>
