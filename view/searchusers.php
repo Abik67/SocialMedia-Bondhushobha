@@ -126,7 +126,10 @@ if (isset($_SESSION['req_status'])) {
 <body>
     <div class="header">
         <div>BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
+        <form action="../controller/cmnController.php" method="post">
+            <input type="text" name="search" placeholder="Search for friends">
+            <button id="srcButton" name="srcSubmit">Search</button>
+        </form>
         <div class="icons">
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>
@@ -142,53 +145,56 @@ if (isset($_SESSION['req_status'])) {
         <h2>Username Found</h2>
         <p>Below are the matched usernames:</p>
         <div class="friend-list">
-            <?php while ($row = $result->fetch_assoc()) {
-                if(!check_blockList($_SESSION['user_id'], $row['id'])) {
-                    
-                
-                if (check_friendList($_SESSION['user_id'], $row['id'])) {
-            ?>
-                    <div class="friend-item">
-                        <span><?php echo $row['name']; ?></span>
-                        <span><?php echo "Email: " . $row['email']; ?></span>
-                        <form action="../controller/cmnController.php" method="post">
-                            <input type="hidden" name="src" value="<?php echo $src; ?>">
-                            <input type="hidden" name="friendId" value="<?php echo $row['id']; ?>">
-                            <input type="hidden" name="action" value="unfrienD">
-                            <button name="SRCunfriend">Unfriend</button>
-                        </form>
-                    </div>
-
-                    <?php } else {
-                    if (checkFriend($_SESSION['user_id'], $row['id'])) { ?>
-                        <div class="friend-item">
-                            <span><?php echo $row['name']; ?></span>
-                            <span><?php echo "Email: " . $row['email']; ?></span>
-                            <form action="../controller/cmnController.php" method="post">
-                                <input type="hidden" name="src" value="<?php echo $src; ?>">
-                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
-                                <input type="hidden" name="friend_id" value="<?php echo $row['id']; ?>">
-                                <button name="addFriend">Request Sent</button>
-                            </form>
-                        </div>
-                    <?php } else { ?>
-                        <div class="friend-item">
-                            <span><?php echo $row['name']; ?></span>
-                            <span><?php echo "Email: " . $row['email']; ?></span>
-                            <form action="../controller/cmnController.php" method="post">
-                                <input type="hidden" name="src" value="<?php echo $src; ?>">
-                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
-                                <input type="hidden" name="friend_id" value="<?php echo $row['id']; ?>">
-                                <?php if($row['id'] == $_SESSION['user_id']) { ?>
-                                    <button name="addFriend" disabled>Self</button>
+                        <?php while ($row = $result->fetch_assoc()) {
+                            if(!check_blockList($_SESSION['user_id'], $row['id'])) {
+            
+                            if (check_friendList($_SESSION['user_id'], $row['id'])) {
+                        ?>
+                                <div class="friend-item">
+                                    <span><?php echo $row['name']; ?></span>
+                                    <span><?php echo "Email: " . $row['email']; ?></span>
+                                    <form action="../controller/cmnController.php" method="post">
+                                        <input type="hidden" name="src" value="<?php echo $src; ?>">
+                                        <input type="hidden" name="friendId" value="<?php echo $row['id']; ?>">
+                                        <input type="hidden" name="action" value="unfrienD">
+                                        <button name="SRCunfriend">Unfriend</button>
+                                    </form>
+                                </div>
+            
+                                <?php } else {
+                                if (checkFriend($_SESSION['user_id'], $row['id'])) { ?>
+                                    <div class="friend-item">
+                                        <span><?php echo $row['name']; ?></span>
+                                        <span><?php echo "Email: " . $row['email']; ?></span>
+                                        <form action="../controller/cmnController.php" method="post">
+                                            <input type="hidden" name="src" value="<?php echo $src; ?>">
+                                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                            <input type="hidden" name="friend_id" value="<?php echo $row['id']; ?>">
+                                            <button name="addFriend">Request Sent</button>
+                                        </form>
+                                    </div>
                                 <?php } else { ?>
-                                    <button name="addFriend">Add Friend</button>
-                                <?php } ?>
-                            </form>
-                        </div>
-            <?php }
-                }
-            } }?>
+                                    <div class="friend-item">
+                                        <span><?php echo $row['name']; ?></span>
+                                        <span><?php echo "Email: " . $row['email']; ?></span>
+                                        <form action="../controller/cmnController.php" method="post">
+                                            <input type="hidden" name="src" value="<?php echo $src; ?>">
+                                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                            <input type="hidden" name="friend_id" value="<?php echo $row['id']; ?>">
+                                            <?php if($row['id'] == $_SESSION['user_id']) { ?>
+                                                <button name="addFriend" disabled>Self</button>
+                                            <?php } else { ?>
+                                                <button name="addFriend">Add Friend</button>
+                                            <?php } ?>
+                                        </form>
+                                    </div>
+                        <?php }
+                            }
+                        } else {
+                            if($result->num_rows == 1) {
+                                header('location: ../view/userfeed.php?msg=No user found');
+                            }
+                         } } ?>
         </div>
     </div>
 </body>

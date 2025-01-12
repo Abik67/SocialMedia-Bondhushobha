@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bondhushobha</title>
+    <title>Bondhushobha - Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <h1>Login</h1>
     <form action="../controller/logincheck.php" method="POST">
+        <h1>Login</h1>
         <input type="text" name="email" placeholder="Email Address">
-        <br><br>
         <input type="password" name="password" placeholder="Password">
-        <br><br>
         <input type="submit" name="login" value="Login">
+        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
     </form>
-    <br>
-    Don't have an account? <a href="signup.php">Sign Up</a>
 </body>
 </html>

@@ -92,12 +92,25 @@ $result=get_blockList($_SESSION['user_id']);
         .blocked-item .unblock {
             background-color: #f44336;
         }
+        a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: inherit;
+    
+    }
     </style>
 </head>
 <body>
     <div class="header">
-        <div>BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
+    <div class="logo">BondhuShobha</div>
+
+<form action="../controller/cmnController.php" method="post">
+    <input type="text" name="search" placeholder="Search for friends">
+    <button id="srcButton" name="srcSubmit">Search</button>
+</form>
         <div class="icons">
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>
@@ -110,11 +123,11 @@ $result=get_blockList($_SESSION['user_id']);
             <button><a href="friends.php">Friends</a></button>
     </div>
     <div class="content">
-        <h2>Add user to block list</h2>
+        
         <div class="block-list">
             <div class="block-item">
-                <span>Username</span>
-                <button>Block</button>
+                
+                
             </div>
         </div>
         <h2>Blocked Lists</h2>

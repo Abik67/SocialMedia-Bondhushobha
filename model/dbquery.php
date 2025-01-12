@@ -186,7 +186,7 @@ function unblock_friend($userId,$friendId)
 function check_blockList($userId,$friendId)
 {
     $conn = dbcon();
-    $sql = "SELECT * FROM block_list WHERE u_id = '$userId' AND f_id = '$friendId'";
+    $sql = "SELECT * FROM block_list WHERE u_id = '$userId' AND f_id = '$friendId' OR u_id = '$friendId' AND f_id = '$userId'";
     $result= $conn->query($sql);
     if($result->num_rows > 0)
     {

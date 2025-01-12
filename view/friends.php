@@ -81,8 +81,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
+    <div class="logo">BondhuShobha</div>
+
+<form action="../controller/cmnController.php" method="post">
+    <input type="text" name="search" placeholder="Search for friends">
+    <button id="srcButton" name="srcSubmit">Search</button>
+</form>
         <div class="icons">
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>

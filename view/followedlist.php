@@ -79,12 +79,25 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: inherit;
+    
+    }
     </style>
 </head>
 <body>
     <div class="header">
-        <div>BondhuShobha</div>
-        <input type="text" placeholder="Search for friends">
+    <div class="logo">BondhuShobha</div>
+
+<form action="../controller/cmnController.php" method="post">
+    <input type="text" name="search" placeholder="Search for friends">
+    <button id="srcButton" name="srcSubmit">Search</button>
+</form>
         <div class="icons">
             <button title="Dark Mode">🌙</button>
             <button title="Notification">🔔</button>

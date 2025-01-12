@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-</head>
+    <title>BondhuShobha</title>
+    <link rel="stylesheet" href="view/css/style.css">
+    </head>
 <body>
-    <h1>Welcome to BondhuShobha</h1>
-    Already have an account? <a href="view/login.php">Login</a> <br>
-    Don't have an account? <a href="view/signup.php">Sign Up</a>
+    <div class="container">
+        <h1>Welcome to BondhuShobha</h1>
+        <p>Already have an account?</p>
+        <a href="view/login.php">Login</a>
+        <p>Don't have an account?</p>
+        <a href="view/signup.php">Sign Up</a>
+    </div>
 </body>
 </html>
