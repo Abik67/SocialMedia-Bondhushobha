@@ -96,7 +96,7 @@
     <div class="main-content">
         <div class="sidebar">
         <button><a href="userfeed.php">User Feed</a></button>
-            <button><a href="message.php">Messages</button>
+            <button><a href="../users.php">Messages</button>
             <button><a href="friends.php">Friends</a></button>
          
         </div>

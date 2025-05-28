@@ -138,7 +138,7 @@ if (isset($_SESSION['req_status'])) {
     </div>
     <div class="sidebar">
         <button><a href="userfeed.php">User Feed</a></button>
-        <button><a href="message.php">Messages</a></button>
+        <button><a href="../users.php">Messages</a></button>
         <button><a href="friends.php">Friends</a></button>
     </div>
     <div class="content">

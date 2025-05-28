@@ -148,7 +148,7 @@ $result = get_FriendList($_SESSION['user_id']);
     </div>
     <div class="sidebar">
         <a href="userfeed.php">User Feed</a>
-        <a href="message.php">Messages</a>
+        <a href="../users.php">Messages</a>
         <a href="friends.php">Friends</a>
     </div>
     <div class="content">

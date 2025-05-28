@@ -106,13 +106,13 @@
     </div>
     <div class="sidebar">
             <button><a href="userfeed.php">User Feed</a></button>
-            <button><a href="message.php">Messages</button>
+            <button><a href="../users.php">Messages</button>
             <button><a href="friends.php">Friends</a></button>
     </div>
     <div class="content">
         <h2>Followed Lists</h2>
         <div class="followed-list">
-            <div class="followed-item">
+            <!-- <div class="followed-item">
                 <span>Username</span>
                 <button>Unfollow</button>
             </div>
@@ -122,7 +122,7 @@
             </div>
             <div class="followed-item">
                 <span>Username</span>
-                <button>Unfollow</button>
+                <button>Unfollow</button> -->
             </div>
         </div>
     </div>
